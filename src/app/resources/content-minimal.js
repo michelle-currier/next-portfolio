@@ -10,6 +10,7 @@ const person = {
   role: "Designer + Developer",
   avatar: "/images/avatar.jpg",
   location: "North America/New Orleans", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  residence: "New Orleans", // anywhere you wanna claim you live
   languages: ["English", "Spanish"], // optional: Leave the array empty if you don't want to display languages
 };
 
