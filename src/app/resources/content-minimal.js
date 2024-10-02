@@ -8,7 +8,8 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Designer + Developer",
-  avatar: "/images/avatar.jpg",
+  //   avatar: "/images/avatar.jpg",
+  avatar: "/images/headshotsm.jpg",
   location: "North America/New Orleans", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   residence: "New Orleans", // anywhere you wanna claim you live
   languages: ["English", "Spanish"], // optional: Leave the array empty if you don't want to display languages

@@ -7,7 +7,8 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Designer + Developer",
-  avatar: "/images/avatar.jpg",
+  // avatar: "/images/avatar.jpg",
+  avatar: "/images/headshotsm.jpg",
   location: "America/Chicago", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   residence: "New Orleans", // anywhere you wanna claim you live
   languages: ["English", "Spanish"], // optional: Leave the array empty if you don't want to display languages
@@ -100,32 +101,18 @@ const about = {
     experiences: [
       {
         company: "IBM",
-        timeframe: "2023 - 2024",
+        timeframe: "2020 - 2024",
         role: "Senior Designer / Frontend Dev",
         achievements: [
           <>
+            <h3>AI Education and work with Watson x</h3>
             Generative AI for Code with watsonx Code Assistant Sales Foundation.
             Generative AI & watsonx for IBM Carbon React Tutorial and converted
             that to a portfolio site deploying from GitHub using Vercel.app to
             deploy.
           </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "IBM - Consulting Academy",
-        timeframe: "2020 - 2023",
-        role: "Senior Designer / Frontend Dev",
-        achievements: [
           <>
+            <h3>Consulting Academey</h3>
             During my tenure with the Consulting Academy, my efforts have
             extended to fostering proficient usage of Github and the deploy
             manager within the UI team. The adoption of these tools has led to a
@@ -140,6 +127,32 @@ const about = {
             ultimately bolstering efficiency and upholding the highest
             professional standards.
           </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Radolo",
+        timeframe: "2020 - 2023",
+        role: "Senior Designer / Frontend Dev",
+        achievements: [
+          <>
+            Small shop specializing in building large and small scale apps for
+            mobile and desktop use.
+          </>,
+          <>Frontend design for the app layouts with Sketch. </>,
+          <>
+            Use of the Kendo along with other frameworks like Googles Material
+            Design. • Updating, Refactoring, and Redesigning older apps.
+          </>,
+          <>Updating, Refactoring, and Redesigning older apps.</>,
         ],
         images: [],
       },

@@ -5,6 +5,7 @@ import {
   Heading,
   Icon,
   IconButton,
+  RevealFx,
   SmartImage,
   Tag,
   Text,
@@ -57,6 +58,14 @@ const structure = [
     title: about.studies.title,
     display: about.studies.display,
     items: about.studies.institutions.map((institution) => institution.name),
+    // for long uni name
+    // items: about.studies.institutions.map((institution) => (
+    //     <Box key={institution.name} sx={{ whiteSpace: 'pre-line' }}>
+    //       <Typography variant="body1">
+    //         {institution.name}
+    //       </Typography>
+    //     </Box>
+    //   )),
   },
   {
     title: about.technical.title,
@@ -102,34 +111,42 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Flex>
       )}
-      <Flex fillWidth mobileDirection="column" justifyContent="center">
+      <Flex fillWidth mobileDirection="column" justifyContent="flex-end">
         {about.avatar.display && (
           <Flex
             minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
+            paddingX="m"
             flex={3}
             direction="column"
-            alignItems="center"
+            alignItems="flex-end"
           >
-            <Avatar src={person.avatar} size="xl" />
-            <Flex gap="8" alignItems="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {/* {person.location} */}
-              {person.residence}
-            </Flex>
-            {person.languages.length > 0 && (
-              <Flex wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
-                    {language}
-                  </Tag>
-                ))}
+            <Flex
+              className="surface-background neutral-border-medium border-solid-1 radius-m-4"
+              direction="column"
+              alignItems="center"
+              padding="m"
+              gap="m"
+              hide="m"
+            >
+              <Avatar src={person.avatar} size="xl" />
+              <Flex gap="8" alignItems="center">
+                <Icon onBackground="accent-weak" name="globe" />
+                {/* {person.location} */}
+                {person.residence}
               </Flex>
-            )}
+              {person.languages.length > 0 && (
+                <Flex wrap gap="8">
+                  {person.languages.map((language, index) => (
+                    <Tag key={index} size="l">
+                      {language}
+                    </Tag>
+                  ))}
+                </Flex>
+              )}
+            </Flex>
           </Flex>
         )}
+        {/* // end avatar info */}
         <Flex
           className={styles.blockAlign}
           fillWidth
@@ -137,77 +154,89 @@ export default function About() {
           maxWidth={40}
           direction="column"
         >
-          <Flex
-            id={about.intro.title}
-            fillWidth
-            minHeight="160"
-            direction="column"
-            justifyContent="center"
-            marginBottom="32"
-          >
-            {about.calendar.display && (
-              <Flex
-                className={styles.blockAlign}
-                style={{
-                  backdropFilter: "blur(var(--static-space-1))",
-                  border: "1px solid var(--brand-alpha-medium)",
-                  width: "fit-content",
-                }}
-                alpha="brand-weak"
-                radius="full"
-                fillWidth
-                padding="4"
-                gap="8"
-                marginBottom="m"
-                alignItems="center"
-              >
-                <Flex paddingLeft="12">
-                  <Icon name="calendar" onBackground="brand-weak" />
-                </Flex>
-                <Flex paddingX="8">Schedule a call</Flex>
-                <IconButton
-                  href={about.calendar.link}
-                  data-border="rounded"
-                  variant="tertiary"
-                  icon="chevronRight"
-                />
-              </Flex>
-            )}
-            <Heading className={styles.textAlign} variant="display-strong-xl">
-              {person.name}
-            </Heading>
-            <Text
-              className={styles.textAlign}
-              variant="display-default-xs"
-              onBackground="neutral-weak"
+          <Flex direction="row">
+            {/* begining intro */}
+            <Flex
+              id={about.intro.title}
+              fillWidth
+              minHeight="160"
+              direction="column"
+              justifyContent="center"
+              marginBottom="32"
             >
-              {person.role}
-            </Text>
-            {social.length > 0 && (
-              <Flex
-                className={styles.blockAlign}
-                paddingTop="20"
-                paddingBottom="8"
-                gap="8"
-                wrap
-              >
-                {social.map(
-                  (item) =>
-                    item.link && (
-                      <Button
-                        key={item.name}
-                        href={item.link}
-                        prefixIcon={item.icon}
-                        label={item.name}
-                        size="s"
-                        variant="tertiary"
-                      />
-                    )
-                )}
-              </Flex>
-            )}
+              {about.calendar.display && (
+                <RevealFx translateY="4">
+                  <Flex
+                    className={styles.blockAlign}
+                    style={{
+                      backdropFilter: "blur(var(--static-space-1))",
+                      border: "1px solid var(--brand-alpha-medium)",
+                      width: "fit-content",
+                    }}
+                    alpha="brand-weak"
+                    radius="full"
+                    fillWidth
+                    padding="4"
+                    gap="8"
+                    marginBottom="m"
+                    alignItems="center"
+                  >
+                    <Flex paddingLeft="12">
+                      <Icon name="calendar" onBackground="brand-weak" />
+                    </Flex>
+                    <Flex paddingX="8">Schedule a call</Flex>
+                    <IconButton
+                      href={about.calendar.link}
+                      data-border="rounded"
+                      variant="tertiary"
+                      icon="chevronRight"
+                    />
+                  </Flex>
+                </RevealFx>
+              )}
+              <RevealFx translateY="8" delay={0.2}>
+                <Heading
+                  className={styles.textAlign}
+                  variant="display-strong-xl"
+                >
+                  {person.name}
+                </Heading>
+              </RevealFx>
+              <RevealFx translateY="12" delay={0.4}>
+                <Text
+                  className={styles.textAlign}
+                  variant="display-default-xs"
+                  onBackground="neutral-weak"
+                >
+                  {person.role}
+                </Text>
+              </RevealFx>
+              {social.length > 0 && (
+                <Flex
+                  className={styles.blockAlign}
+                  paddingTop="20"
+                  paddingBottom="8"
+                  gap="8"
+                  wrap
+                >
+                  {social.map(
+                    (item) =>
+                      item.link && (
+                        <Button
+                          key={item.name}
+                          href={item.link}
+                          prefixIcon={item.icon}
+                          label={item.name}
+                          size="s"
+                          variant="tertiary"
+                        />
+                      )
+                  )}
+                </Flex>
+              )}
+            </Flex>
+            {/* end intro */}
           </Flex>
-
           {about.intro.display && (
             <Flex
               direction="column"
