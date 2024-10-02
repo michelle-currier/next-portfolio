@@ -113,38 +113,40 @@ export default function About() {
       )}
       <Flex fillWidth mobileDirection="column" justifyContent="flex-end">
         {about.avatar.display && (
-          <Flex
-            minWidth="160"
-            paddingX="m"
-            flex={3}
-            direction="column"
-            alignItems="flex-end"
-          >
+          <RevealFx translateY="4">
             <Flex
-              className="surface-background neutral-border-medium border-solid-1 radius-m-4"
+              minWidth="160"
+              paddingX="m"
+              flex={3}
               direction="column"
-              alignItems="center"
-              padding="m"
-              gap="m"
-              hide="m"
+              alignItems="flex-end"
             >
-              <Avatar src={person.avatar} size="xl" />
-              <Flex gap="8" alignItems="center">
-                <Icon onBackground="accent-weak" name="globe" />
-                {/* {person.location} */}
-                {person.residence}
-              </Flex>
-              {person.languages.length > 0 && (
-                <Flex wrap gap="8">
-                  {person.languages.map((language, index) => (
-                    <Tag key={index} size="l">
-                      {language}
-                    </Tag>
-                  ))}
+              <Flex
+                className="surface-background neutral-border-medium border-solid-1 radius-m-4"
+                direction="column"
+                alignItems="center"
+                padding="m"
+                gap="m"
+                hide="m"
+              >
+                <Avatar src={person.avatar} size="xl" />
+                <Flex gap="8" alignItems="center">
+                  <Icon onBackground="accent-weak" name="globe" />
+                  {/* {person.location} */}
+                  {person.residence}
                 </Flex>
-              )}
+                {person.languages.length > 0 && (
+                  <Flex wrap gap="8">
+                    {person.languages.map((language, index) => (
+                      <Tag key={index} size="l">
+                        {language}
+                      </Tag>
+                    ))}
+                  </Flex>
+                )}
+              </Flex>
             </Flex>
-          </Flex>
+          </RevealFx>
         )}
         {/* // end avatar info */}
         <Flex
@@ -212,41 +214,45 @@ export default function About() {
                 </Text>
               </RevealFx>
               {social.length > 0 && (
-                <Flex
-                  className={styles.blockAlign}
-                  paddingTop="20"
-                  paddingBottom="8"
-                  gap="8"
-                  wrap
-                >
-                  {social.map(
-                    (item) =>
-                      item.link && (
-                        <Button
-                          key={item.name}
-                          href={item.link}
-                          prefixIcon={item.icon}
-                          label={item.name}
-                          size="s"
-                          variant="tertiary"
-                        />
-                      )
-                  )}
-                </Flex>
+                <RevealFx translateY="12" delay={0.4}>
+                  <Flex
+                    className={styles.blockAlign}
+                    paddingTop="20"
+                    paddingBottom="8"
+                    gap="8"
+                    wrap
+                  >
+                    {social.map(
+                      (item) =>
+                        item.link && (
+                          <Button
+                            key={item.name}
+                            href={item.link}
+                            prefixIcon={item.icon}
+                            label={item.name}
+                            size="s"
+                            variant="tertiary"
+                          />
+                        )
+                    )}
+                  </Flex>
+                </RevealFx>
               )}
             </Flex>
             {/* end intro */}
           </Flex>
           {about.intro.display && (
-            <Flex
-              direction="column"
-              textVariant="body-default-l"
-              fillWidth
-              gap="m"
-              marginBottom="xl"
-            >
-              {about.intro.description}
-            </Flex>
+            <RevealFx translateY="8" delay={1.2}>
+              <Flex
+                direction="column"
+                textVariant="body-default-l"
+                fillWidth
+                gap="m"
+                marginBottom="xl"
+              >
+                {about.intro.description}
+              </Flex>
+            </RevealFx>
           )}
 
           {about.work.display && (
