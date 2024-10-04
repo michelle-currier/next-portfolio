@@ -116,7 +116,7 @@ export const Header = () => {
               </Flex>
             </ToggleButton>
           )}
-          {routes["/blog"] && (
+          {/* {routes["/blog"] && (
             <ToggleButton
               prefixIcon="book"
               href="/blog"
@@ -126,12 +126,23 @@ export const Header = () => {
                 {blog.label}
               </Flex>
             </ToggleButton>
-          )}
-          {routes["/gallery"] && (
+          )} */}
+          {/* {routes["/gallery"] && (
             <ToggleButton
               prefixIcon="gallery"
               href="/gallery"
               selected={pathname.startsWith("/gallery")}
+            >
+              <Flex paddingX="2" hide="s">
+                {gallery.label}
+              </Flex>
+            </ToggleButton>
+          )} */}
+          {routes["/contact"] && (
+            <ToggleButton
+              prefixIcon="contact"
+              href="/contact"
+              selected={pathname.startsWith("/contact")}
             >
               <Flex paddingX="2" hide="s">
                 {gallery.label}

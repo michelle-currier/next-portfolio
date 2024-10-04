@@ -6,6 +6,7 @@ const routes = {
   "/work": true,
   "/blog": true,
   "/gallery": true,
+  "/contact": true,
 };
 
 // Enable password protection on selected routes
@@ -16,8 +17,8 @@ const protectedRoutes = {
 
 const effects = {
   gradient: true,
-  dots: true,
-  lines: false,
+  dots: false,
+  lines: true,
 };
 
 const style = {

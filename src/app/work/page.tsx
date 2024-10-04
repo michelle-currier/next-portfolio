@@ -1,7 +1,9 @@
 import { getPosts } from "@/app/utils";
-import { Flex } from "@/once-ui/components";
+import { Flex, Button, Icon, IconButton } from "@/once-ui/components";
 import { Projects } from "@/app/work/components/Projects";
-import { baseURL, person, work } from "../resources";
+import { baseURL, person, work, linkz } from "../resources";
+// import Link from "next/link";
+// import { FaDownload } from "react-icons/fa";
 
 export function generateMetadata() {
   const title = work.title;
@@ -62,6 +64,34 @@ export default function Work() {
           }),
         }}
       />
+
+      <Flex
+        style={{
+          backdropFilter: "blur(var(--static-space-1))",
+          border: "1px solid var(--brand-alpha-medium)",
+          width: "fit-content",
+        }}
+        alpha="brand-weak"
+        radius="full"
+        fillWidth
+        padding="4"
+        gap="8"
+        marginBottom="m"
+        alignItems="center"
+      >
+        <Flex paddingLeft="12">
+          <Icon name="openLink" onBackground="brand-weak" />
+          {/* <Icon name="HiSparkles" onBackground="brand-weak" /> */}
+        </Flex>
+        <Flex paddingX="8">Consulting Academy Games</Flex>
+        <IconButton
+          href="https://drive.google.com/uc?export=download&id=1C1VLYqzScTcePa5Ed74ToAkifPZPdvQ0
+                      "
+          data-border="rounded"
+          variant="tertiary"
+          icon="chevronRight"
+        />
+      </Flex>
       <Projects />
     </Flex>
   );

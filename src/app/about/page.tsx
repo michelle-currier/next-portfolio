@@ -58,14 +58,6 @@ const structure = [
     title: about.studies.title,
     display: about.studies.display,
     items: about.studies.institutions.map((institution) => institution.name),
-    // for long uni name
-    // items: about.studies.institutions.map((institution) => (
-    //     <Box key={institution.name} sx={{ whiteSpace: 'pre-line' }}>
-    //       <Typography variant="body1">
-    //         {institution.name}
-    //       </Typography>
-    //     </Box>
-    //   )),
   },
   {
     title: about.technical.title,

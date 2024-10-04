@@ -50,6 +50,14 @@ const social = [
   },
 ];
 
+const linkz = [
+  {
+    name: "Consulting Academy Games",
+    icon: "pdf",
+    link: "https://drive.google.com/drive/folders/1FWTjTtaNjXLqwmdyKElAYNa4CYDvZmeg",
+  },
+];
+
 const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
@@ -57,7 +65,7 @@ const home = {
   headline: <>Designer who codes + creator</>,
   subline: (
     <>
-      I'm Michelle, a design engineer at{" "}
+      I'm Michelle, a designer & developer at{" "}
       <InlineCode>m. currier designs</InlineCode>, where I craft intuitive
       <br /> user experiences. After hours, I build my own projects like
       miro-radio.com and DJing.
@@ -96,6 +104,12 @@ const about = {
     ),
   },
   work: {
+    external: {
+      name: "Consulting Academy Games",
+      icon: "pdf",
+      link: "https://drive.google.com/drive/folders/1FWTjTtaNjXLqwmdyKElAYNa4CYDvZmeg",
+    },
+
     display: true, // set to false to hide this section
     title: "Work Experience",
     experiences: [
@@ -309,4 +323,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, linkz };
