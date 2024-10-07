@@ -1,0 +1,81 @@
+input.special {
+    font-family:  var(--font-primary);
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-m);
+    border: 1px solid var(--neutral-border-medium);  
+    color: #fff !important;
+    padding: .7rem .7rem 1rem .7rem;
+    outline: none;
+    background-color: var(--static-transparent);
+    min-height: var(--static-space-56);
+    transition: var(--transition-property) var(--transition-duration-micro-medium) var(--transition-timing-function);
+    &.labelAsPlaceholder {
+        padding-top: 0;
+    }
+
+    &:not(.labelAsPlaceholder) {
+        padding-top: var(--static-space-16);
+    }
+
+    &.labelAsPlaceholder.hasChildren {
+        padding-top: var(--static-space-16);
+    }
+
+    &::placeholder {
+        color: var(--neutral-on-background-weak);
+    }
+
+    &:disabled {
+        background-color: var(--neutral-solid-strong);
+        color: var(--neutral-on-solid-weak);
+    }
+
+    &:autofill, &:-webkit-autofill {
+        background-color: var(--neutral-background-strong) !important;
+        border-radius: var(--radius-m);
+        -webkit-box-shadow: 0 0 0 var(--static-space-32) var(--neutral-background-strong) inset !important;
+        -webkit-text-fill-color: var(--neutral-on-background-strong) !important;
+    }
+
+    &.focused, &.filled {
+        background-color: var(--neutral-background-strong);
+        border-color: var(--neutral-border-medium);
+    }
+
+    &:focus-within, &:hover {
+        background-color: var(--neutral-alpha-weak);
+    }
+
+    &:has(.labelAsPlaceholder) {
+        min-height: var(--static-space-48);
+    }
+}
+
+.error {
+    .base {
+        background-color: var(--danger-background-medium);
+        border-color: var(--danger-border-medium);
+    }
+
+    .input, .prefix, .suffix {
+        color: var(--danger-on-background-medium);
+    }
+
+    .label {
+        color: var(--danger-on-background-weak);
+    }
+}
+
+.prefix, .suffix {
+    align-self: center;
+}
+
+.input[type="color"] {
+    opacity: 0;
+}
+
+Button.butt {
+    font-family:  var(--font-primary);
+}

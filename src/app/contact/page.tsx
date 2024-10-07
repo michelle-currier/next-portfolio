@@ -1,15 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Input,
-  Button,
-  Flex,
-  Icon,
-  IconButton,
-  Heading,
-  Text,
-} from "@/once-ui/components";
+import { Button, Flex, Heading, Text } from "@/once-ui/components";
+import styles from "@/app/contact/contact.module.scss";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -64,9 +57,8 @@ export default function Contact() {
           padding="m"
           className="surface-background neutral-border-medium border-solid-1 radius-m-4"
         >
-          <Input
-            height="s"
-            type="text"
+          <input
+            className={styles.special}
             id="name"
             name="name"
             placeholder="Your Name"
@@ -74,8 +66,8 @@ export default function Contact() {
             onChange={handleChange}
             required
           />
-          <Input
-            height="s"
+          <input
+            className={styles.special}
             type="email"
             id="email"
             name="email"
@@ -84,8 +76,8 @@ export default function Contact() {
             onChange={handleChange}
             required
           />
-          <Input
-            height="s"
+          <input
+            className={styles.special}
             type="tel"
             id="phone"
             name="phone"
@@ -94,8 +86,8 @@ export default function Contact() {
             onChange={handleChange}
             required
           />
-          <Input
-            height="s"
+          <input
+            className={styles.special}
             id="message"
             name="message"
             placeholder="Your Message"
@@ -103,7 +95,9 @@ export default function Contact() {
             onChange={handleChange}
             required
           />
-          <Button type="submit">Send Message</Button>
+          <Button type="submit" className={styles.butt}>
+            Send Message
+          </Button>
         </Flex>
       </form>
 

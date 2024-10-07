@@ -53,11 +53,13 @@ const social = [
 const linkz = [
   {
     name: "Consulting Academy Games",
-    icon: "pdf",
+    icon: "paper",
     link: "https://drive.google.com/drive/folders/1FWTjTtaNjXLqwmdyKElAYNa4CYDvZmeg",
   },
 ];
-
+const contact = {
+  label: "Contact us",
+};
 const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
@@ -323,4 +325,15 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery, linkz };
+export {
+  person,
+  social,
+  newsletter,
+  home,
+  about,
+  blog,
+  work,
+  gallery,
+  linkz,
+  contact,
+};

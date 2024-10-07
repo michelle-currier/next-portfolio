@@ -2,12 +2,20 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
+import { HiOutlinePaperAirplane } from "react-icons/hi2";
 import { Flex, ToggleButton } from "@/once-ui/components";
 import styles from "@/app/components/Header.module.scss";
 
 import { routes, display } from "@/app/resources";
-import { person, home, about, blog, work, gallery } from "@/app/resources";
+import {
+  person,
+  home,
+  about,
+  blog,
+  work,
+  gallery,
+  contact,
+} from "@/app/resources";
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -140,12 +148,12 @@ export const Header = () => {
           )} */}
           {routes["/contact"] && (
             <ToggleButton
-              prefixIcon="contact"
+              prefixIcon="email"
               href="/contact"
               selected={pathname.startsWith("/contact")}
             >
               <Flex paddingX="2" hide="s">
-                {gallery.label}
+                {contact.label}
               </Flex>
             </ToggleButton>
           )}
