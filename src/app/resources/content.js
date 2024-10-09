@@ -58,7 +58,7 @@ const linkz = [
   },
 ];
 const contact = {
-  label: "Contact us",
+  label: "Contact",
 };
 const home = {
   label: "Home",

@@ -95,6 +95,7 @@ export const Header = () => {
             <ToggleButton
               prefixIcon="home"
               href="/"
+              aria-label="home"
               selected={pathname === "/"}
             >
               <Flex paddingX="2" hide="s">
@@ -106,6 +107,7 @@ export const Header = () => {
             <ToggleButton
               prefixIcon="person"
               href="/about"
+              aria-label="about"
               selected={pathname === "/about"}
             >
               <Flex paddingX="2" hide="s">
@@ -117,6 +119,7 @@ export const Header = () => {
             <ToggleButton
               prefixIcon="grid"
               href="/work"
+              aria-label="work"
               selected={pathname.startsWith("/work")}
             >
               <Flex paddingX="2" hide="s">
@@ -128,6 +131,7 @@ export const Header = () => {
             <ToggleButton
               prefixIcon="book"
               href="/blog"
+              aria-label="blog"
               selected={pathname.startsWith("/blog")}
             >
               <Flex paddingX="2" hide="s">
@@ -139,6 +143,7 @@ export const Header = () => {
             <ToggleButton
               prefixIcon="gallery"
               href="/gallery"
+              aria-label="gallery"
               selected={pathname.startsWith("/gallery")}
             >
               <Flex paddingX="2" hide="s">
@@ -150,6 +155,7 @@ export const Header = () => {
             <ToggleButton
               prefixIcon="email"
               href="/contact"
+              aria-label="contact"
               selected={pathname.startsWith("/contact")}
             >
               <Flex paddingX="2" hide="s">

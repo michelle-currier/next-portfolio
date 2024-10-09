@@ -102,8 +102,10 @@ export default function Contact() {
       </form>
 
       {status && (
-        <Flex direction="column" gap="m">
-          <Text
+        <Flex direction="column" gap="m" className="mt-16">
+          <Flex
+            padding="s"
+            radius="m"
             className={`font-m ${
               status.includes("successfully")
                 ? "success-solid-weak"
@@ -111,11 +113,11 @@ export default function Contact() {
             }`}
           >
             {status}
-          </Text>
+          </Flex>
         </Flex>
       )}
 
-      <Flex direction="column" gap="m" padding="m">
+      <Flex direction="column" gap="m" padding="s">
         <p>Or, send us an email directly at</p>
         <a href="mailto:mcurrierdesigns@gmail.com" className="text-blue-600">
           mcurrierdesigns@gmail.com
