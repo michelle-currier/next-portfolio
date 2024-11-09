@@ -124,11 +124,11 @@ export default function Home() {
       </RevealFx>
       {routes["/blog"] && (
         <Flex fillWidth paddingX="20">
-          <Posts range={[1, 2]} columns="2" />
+          <Posts range={[1, 3]} columns="2" />
         </Flex>
       )}
       <Projects range={[2]} />
-      {newsletter.display && <Mailchimp />}
+      {/* {newsletter.display && <Mailchimp />} */}
     </Flex>
   );
 }
