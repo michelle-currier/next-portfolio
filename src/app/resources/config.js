@@ -7,6 +7,7 @@ const routes = {
   "/blog": true,
   "/gallery": true,
   "/contact": true,
+  "/infographic": true,
 };
 
 // Enable password protection on selected routes
@@ -31,6 +32,21 @@ const style = {
   border: "playful", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
+  colors: {
+    orange: "#FFA500",
+    yellow: "#FFD700",
+    moss: "#8A9A5B",
+    green: "#008000",
+    emerald: "#50C878",
+    aqua: "#00FFFF",
+    cyan: "#00BCD4",
+    blue: "#0000FF",
+    indigo: "#4B0082",
+    purple: "#8A3FFC",
+    magenta: "#FF00FF",
+    pink: "#FFC0CB",
+    white: "#fff",
+  },
 };
 
 const display = {
