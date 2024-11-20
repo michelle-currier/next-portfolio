@@ -1,7 +1,6 @@
 "use client";
-
-import React, { useEffect, useState, forwardRef } from "react";
 import styles from "./GlitchFx.module.scss";
+import React, { useEffect, useState, forwardRef } from "react";
 
 interface GlitchFxProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

@@ -8,6 +8,7 @@ import { person, baseURL } from "@/app/resources";
 interface BlogParams {
   params: {
     slug: string;
+    // post: string;
   };
 }
 
