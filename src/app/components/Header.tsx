@@ -14,6 +14,7 @@ import {
   blog,
   work,
   gallery,
+  infographic,
   contact,
 } from "@/app/resources";
 
@@ -75,10 +76,10 @@ export const Header = () => {
         textVariant="body-default-s"
       >
         {display.location && (
-          <>
+          <div className="surface-background border-sm">
             {/* {person.location} */}
             {residence}
-          </>
+          </div>
         )}
       </Flex>
       <Flex
@@ -160,6 +161,18 @@ export const Header = () => {
             >
               <Flex paddingX="2" hide="s">
                 {contact.label}
+              </Flex>
+            </ToggleButton>
+          )}
+          {routes["/infographic"] && (
+            <ToggleButton
+              prefixIcon="gallery"
+              href="/infographic"
+              aria-label="Infographic"
+              selected={pathname.startsWith("/infographic")}
+            >
+              <Flex paddingX="2" hide="s">
+                {infographic.label}
               </Flex>
             </ToggleButton>
           )}

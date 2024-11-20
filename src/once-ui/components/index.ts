@@ -15,6 +15,7 @@ export { Dropdown } from './Dropdown';
 export type { DropdownProps } from './Dropdown';
 export type { DropdownOptions } from './Dropdown';
 export { DropdownWrapper } from './DropdownWrapper';
+export { GlitchFx } from './GlitchFx';
 export { Grid } from './Grid';
 export type { GridProps } from './Grid';
 export { Feedback } from './Feedback';

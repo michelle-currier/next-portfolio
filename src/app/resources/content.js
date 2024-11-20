@@ -57,6 +57,9 @@ const linkz = [
     link: "https://drive.google.com/drive/folders/1FWTjTtaNjXLqwmdyKElAYNa4CYDvZmeg",
   },
 ];
+const infographic = {
+  label: "Infographic",
+};
 const contact = {
   label: "Contact",
 };
@@ -336,4 +339,5 @@ export {
   gallery,
   linkz,
   contact,
+  infographic,
 };
