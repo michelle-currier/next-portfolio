@@ -57,7 +57,7 @@ const InfographicTile: React.FC<InfographicProps> = ({
       {/* {React.cloneElement(icon as React.ReactElement, {
           fill: selectedColor,
         })} */}
-      <GlitchFx speed="medium" interval={2500} trigger="hover">
+      <GlitchFx speed="slow" interval={2500} trigger="hover">
         <Flex>
           <Pictogram
             aria-label={heading}

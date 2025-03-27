@@ -196,19 +196,19 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Figma + Next.js + Vercel",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Able to prototype in Figma with Nextjs at unnatural speeds.</>
         ),
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
+            src: "/images/projects/project-01/image-04.png",
             alt: "Project image",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
+            src: "/images/projects/project-01/cover-02.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
@@ -216,13 +216,13 @@ const about = {
         ],
       },
       {
-        title: "Next.js",
+        title: "js + web components",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Building next gen apps with js + web components + github.</>
         ),
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
+            src: "/images/projects/project-01/image-1.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
