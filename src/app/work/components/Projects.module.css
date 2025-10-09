@@ -1,0 +1,15 @@
+.hover {
+  transition: var(--transition-property) var(--transition-duration-micro-medium) var(--transition-timing-function);
+}
+.hover:hover {
+  transform: translateX(var(--static-space-8));
+}
+.hover:hover .indicator {
+  transform: rotate(0);
+}
+
+.indicator {
+  transform: rotate(-90deg);
+  left: -2rem;
+  transition: var(--transition-property) var(--transition-duration-micro-medium) var(--transition-timing-function);
+}/*# sourceMappingURL=Projects.module.css.map */
