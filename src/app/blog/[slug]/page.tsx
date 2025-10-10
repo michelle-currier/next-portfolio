@@ -1,9 +1,16 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/app/components/mdx";
 import { formatDate, getPosts } from "@/app/utils";
-import { Avatar, Button, Flex, Heading, Text } from "@/once-ui/components";
-
-import { person, baseURL } from "@/app/resources";
+import {
+  Avatar,
+  Button,
+  Flex,
+  Heading,
+  Meta,
+  Text,
+} from "@/once-ui/components";
+import { Metadata } from "next";
+import { person, baseURL, blog, about } from "@/app/resources";
 
 interface BlogParams {
   params: {
@@ -11,56 +18,81 @@ interface BlogParams {
   };
 }
 
-export async function generateStaticParams() {
-  let posts = getPosts(["src", "app", "blog", "posts"]);
-
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  const posts = getPosts(["src", "app", "blog", "posts"]);
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export function generateMetadata({ params }: BlogParams) {
-  let post = getPosts(["src", "app", "blog", "posts"]).find(
-    (post) => post.slug === params.slug
-  );
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string | string[] }>;
+}): Promise<Metadata> {
+  const routeParams = await params;
+  const slugPath = Array.isArray(routeParams.slug)
+    ? routeParams.slug.join("/")
+    : routeParams.slug || "";
 
-  if (!post) {
-    return;
-  }
+  const posts = getPosts(["src", "app", "blog", "posts"]);
+  let post = posts.find((post) => post.slug === slugPath);
 
-  let {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image,
-  } = post.metadata;
-  let ogImage = image
-    ? `https://${baseURL}${image}`
-    : `https://${baseURL}/og?title=${title}`;
+  if (!post) return {};
 
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: "article",
-      publishedTime,
-      url: `https://${baseURL}/blog/${post.slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage],
-    },
-  };
+  return Meta.generate({
+    title: post.metadata.title,
+    description: post.metadata.summary,
+    baseURL: baseURL,
+    image:
+      post.metadata.image || `/api/og/generate?title=${post.metadata.title}`,
+    path: `${blog.path}/${post.slug}`,
+  });
 }
+
+///
+// export function generateMetadata({ params }: BlogParams) {
+//   let post = getPosts(["src", "app", "blog", "posts"]).find(
+//     (post) => post.slug === params.slug
+//   );
+
+//   if (!post) {
+//     return;
+//   }
+
+//   let {
+//     title,
+//     publishedAt: publishedTime,
+//     summary: description,
+//     image,
+//   } = post.metadata;
+//   let ogImage = image
+//     ? `https://${baseURL}${image}`
+//     : `https://${baseURL}/og?title=${title}`;
+
+//   return {
+//     title,
+//     description,
+//     openGraph: {
+//       title,
+//       description,
+//       type: "article",
+//       publishedTime,
+//       url: `https://${baseURL}/blog/${post.slug}`,
+//       images: [
+//         {
+//           url: ogImage,
+//         },
+//       ],
+//     },
+//     twitter: {
+//       card: "summary_large_image",
+//       title,
+//       description,
+//       images: [ogImage],
+//     },
+//   };
+// }
 
 export default function Blog({ params }: BlogParams) {
   let post = getPosts(["src", "app", "blog", "posts"]).find(

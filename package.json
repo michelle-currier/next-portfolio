@@ -9,6 +9,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@once-ui-system/core": "^1.4.27",
 		"@carbon/pictograms-react": "^11.68.0",
 		"@floating-ui/react-dom": "^2.1.1",
 		"@heroicons/react": "^2.1.5",
