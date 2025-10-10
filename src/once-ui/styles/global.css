@@ -1,0 +1,86 @@
+/* BOX-SIZING */
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 0 var(--static-space-40);
+  line-height: inherit;
+}
+
+li {
+  padding: var(--static-space-8) 0;
+  line-height: 150%;
+  font-size: inherit;
+  color: inherit;
+}
+li::marker {
+  color: var(--brand-on-background-weak);
+}
+
+blockquote {
+  display: flex;
+  margin: var(--static-space-16) 0;
+  border-radius: var(--radius-m);
+  background: var(--brand-alpha-weak);
+  overflow: hidden;
+  text-wrap: balance;
+  -webkit-backdrop-filter: blur(var(--static-space-2));
+          backdrop-filter: blur(var(--static-space-2));
+  border: 1px dashed var(--brand-alpha-medium);
+}
+blockquote span {
+  margin: 0 !important;
+  padding: var(--static-space-16) var(--static-space-24);
+  color: var(--brand-on-background-medium) !important;
+}
+
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+/* SELECTION */
+::-moz-selection {
+  background: var(--neutral-on-background-medium);
+  color: var(--neutral-background-strong);
+}
+::selection {
+  background: var(--neutral-on-background-medium);
+  color: var(--neutral-background-strong);
+}
+
+/* LINK */
+a {
+  color: var(--brand-on-background-medium);
+  text-decoration: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+  text-decoration-color: var(--neutral-border-strong) !important;
+}
+a:hover {
+  text-decoration-line: underline;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  background: var(--static-transparent);
+  width: var(--static-space-8);
+  height: var(--static-space-8);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--static-transparent);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-alpha-medium);
+  border-radius: var(--radius-999);
+  -webkit-transition: var(--transition-property) var(--transition-duration-micro-medium) var(--transition-timing-function);
+  transition: var(--transition-property) var(--transition-duration-micro-medium) var(--transition-timing-function);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-alpha-strong);
+}/*# sourceMappingURL=global.css.map */
