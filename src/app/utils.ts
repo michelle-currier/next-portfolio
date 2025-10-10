@@ -59,10 +59,38 @@ function getMDXData(dir: string) {
     });
 }
 
-export function getPosts(customPath = ['', '', '', '']) {
-    const postsDir = path.join(process.cwd(), ...customPath);
+// export function getPosts(customPath = ['', '', '', '']) {
+//     const postsDir = path.join(process.cwd(), ...customPath);
+//     return getMDXData(postsDir);
+    
+// }
+export function getPosts(
+    type: "blog" | "work" | string[] = ["", "", "", ""]
+  ) {
+    let postsDir: string;
+  
+    if (Array.isArray(type)) {
+      // Backward compatibility
+      postsDir = path.join(process.cwd(), ...type);
+    } else {
+      // Named presets for convenience
+      const dirs: Record<string, string[]> = {
+        blog: ["src", "app", "blog", "posts"],
+        work: ["src", "app", "work", "projects"],
+      };
+  
+      const customDir = dirs[type];
+      if (!customDir) {
+        throw new Error(
+          `Invalid type "${type}". Use "blog" | "work" or pass a custom path array.`
+        );
+      }
+  
+      postsDir = path.join(process.cwd(), ...customDir);
+    }
+  
     return getMDXData(postsDir);
-}
+  }
 
 export function formatDate(date: string, includeRelative = false) {
     const currentDate = new Date();
